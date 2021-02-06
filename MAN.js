@@ -6,7 +6,7 @@ class MAN{
             isStatic:true
         }
 
-        this.body=Bodies.circle(x,y,250,options);
+        this.body=Bodies.circle(x,y,25,options);
         this.image=loadImage("walk/walking_1.png");
         World.add(world,this.body);
     }
@@ -14,11 +14,9 @@ class MAN{
     display(){
         var pos=this.body.position;
         var angle=this.body.angle;
-
-        translate(pos.x,pos.y);
-        rotate(angle);
+        
         imageMode(CENTER);
-        image(this.image,0,0,250,250);
+        image(this.image,pos.x,pos.y,250,250);
 
     }
 }
